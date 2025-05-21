@@ -61,7 +61,21 @@ export default {
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-in-out',
+        'slide-down': 'slideDown 0.5s ease-in-out',
+        'slide-left': 'slideLeft 0.5s ease-in-out',
+        'slide-right': 'slideRight 0.5s ease-in-out',
         'pulse-slow': 'pulse 3s infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite',
+        'bounce-slow': 'bounce 3s infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'wiggle': 'wiggle 1s ease-in-out infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'morph': 'morph 8s ease-in-out infinite',
+        'rotate-3d': 'rotate3d 20s linear infinite',
+        'scale-pulse': 'scalePulse 2s ease-in-out infinite',
+        'border-flow': 'borderFlow 3s linear infinite',
+        'text-shimmer': 'textShimmer 2s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -72,14 +86,71 @@ export default {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        slideDown: {
+          '0%': { transform: 'translateY(-20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideLeft: {
+          '0%': { transform: 'translateX(20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideRight: {
+          '0%': { transform: 'translateX(-20px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        glow: {
+          '0%, 100%': { opacity: '1', filter: 'brightness(1)' },
+          '50%': { opacity: '0.8', filter: 'brightness(1.2)' },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        morph: {
+          '0%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
+          '50%': { borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' },
+          '100%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
+        },
+        rotate3d: {
+          '0%': { transform: 'rotate3d(1, 1, 1, 0deg)' },
+          '100%': { transform: 'rotate3d(1, 1, 1, 360deg)' },
+        },
+        scalePulse: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+        borderFlow: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        textShimmer: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
+        },
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         'soft-lg': '0 10px 25px -3px rgba(0, 0, 0, 0.07), 0 20px 40px -2px rgba(0, 0, 0, 0.04)',
+        'glow': '0 0 15px rgba(14, 165, 233, 0.5)',
+        'glow-lg': '0 0 30px rgba(14, 165, 233, 0.5)',
+        'glow-xl': '0 0 50px rgba(14, 165, 233, 0.5)',
+        'neon': '0 0 5px rgba(14, 165, 233, 0.5), 0 0 20px rgba(14, 165, 233, 0.3)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-shine': 'linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 50%, transparent 50%, transparent 75%, rgba(255, 255, 255, 0.1) 75%, rgba(255, 255, 255, 0.1))',
+        'gradient-shimmer': 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+        'gradient-border': 'linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc, #38bdf8, #0ea5e9)',
       },
     },
   },

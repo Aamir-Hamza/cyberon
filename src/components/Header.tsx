@@ -23,37 +23,37 @@ export const Header = () => {
   
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 dark:bg-dark-900/95 backdrop-blur-md shadow-soft' : 'bg-transparent'}`}>
-      <div className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white">
+      <div className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white animate-gradient-shine">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
           <div className="flex items-center space-x-4">
-            <a href="mailto:info@cyberon.in" className="flex items-center hover:text-white/80 transition">
+            <a href="mailto:info@cyberon.in" className="flex items-center hover:text-white/80 transition-all duration-300 hover:scale-105">
               <span>Email: info@cyberon.in</span>
             </a>
-            <a href="tel:084484570076" className="flex items-center hover:text-white/80 transition">
+            <a href="tel:084484570076" className="flex items-center hover:text-white/80 transition-all duration-300 hover:scale-105">
               <span>Phone: 084484 57007</span>
             </a>
           </div>
           <div className="hidden md:flex items-center space-x-3">
-            <a href="#" className="hover:text-white/80 transition" aria-label="Twitter">
-              <Twitter size={16} />
+            <a href="#" className="hover:text-white/80 transition-all duration-300 hover:scale-110" aria-label="Twitter">
+              <Twitter size={16} className="animate-float" style={{ animationDelay: '0.1s' }} />
             </a>
-            <a href="#" className="hover:text-white/80 transition" aria-label="Instagram">
-              <Instagram size={16} />
+            <a href="#" className="hover:text-white/80 transition-all duration-300 hover:scale-110" aria-label="Instagram">
+              <Instagram size={16} className="animate-float" style={{ animationDelay: '0.2s' }} />
             </a>
-            <a href="#" className="hover:text-white/80 transition" aria-label="YouTube">
-              <Youtube size={16} />
+            <a href="#" className="hover:text-white/80 transition-all duration-300 hover:scale-110" aria-label="YouTube">
+              <Youtube size={16} className="animate-float" style={{ animationDelay: '0.3s' }} />
             </a>
-            <a href="#" className="hover:text-white/80 transition" aria-label="LinkedIn">
-              <Linkedin size={16} />
+            <a href="#" className="hover:text-white/80 transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+              <Linkedin size={16} className="animate-float" style={{ animationDelay: '0.4s' }} />
             </a>
             <button
               onClick={toggleTheme}
-              className="bg-white/10 text-white p-1 rounded-md hover:bg-white/20 transition"
+              className="bg-white/10 text-white p-1 rounded-md hover:bg-white/20 transition-all duration-300 hover:scale-110 hover:shadow-glow"
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
             >
-              {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+              {theme === 'light' ? <Moon size={16} className="animate-spin-slow" /> : <Sun size={16} className="animate-spin-slow" />}
             </button>
-            <a href="#" className="bg-white text-secondary-600 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/90 transition shadow-soft">
+            <a href="#" className="bg-white text-secondary-600 px-3 py-1 rounded-md text-xs font-medium hover:bg-white/90 transition-all duration-300 shadow-soft hover:shadow-glow hover:scale-105">
               Follow us
             </a>
           </div>
@@ -62,9 +62,9 @@ export const Header = () => {
       
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <a href="/" className="flex items-center space-x-2">
-            <Shield className="text-secondary-500" size={28} />
-            <span className="text-xl font-bold text-dark-900 dark:text-white">Cyber<span className="text-secondary-500">ON</span></span>
+          <a href="/" className="flex items-center space-x-2 group hover:scale-105 transition-transform duration-300">
+            <Shield className="text-secondary-500 animate-bounce-slow" size={28} />
+            <span className="text-xl font-bold text-dark-900 dark:text-white group-hover:text-secondary-500 transition-colors duration-300">Cyber<span className="text-secondary-500 animate-glow">ON</span></span>
           </a>
           
           <nav className="hidden lg:flex space-x-1">
@@ -124,27 +124,27 @@ export const Header = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className="lg:hidden bg-white/10 dark:bg-dark-800 text-dark-900 dark:text-white p-2 rounded-md hover:bg-white/20 dark:hover:bg-dark-700 transition"
+              className="lg:hidden bg-white/10 dark:bg-dark-800 text-dark-900 dark:text-white p-2 rounded-md hover:bg-white/20 dark:hover:bg-dark-700 transition-all duration-300 hover:scale-110 hover:shadow-glow"
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
             >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+              {theme === 'light' ? <Moon size={20} className="animate-spin-slow" /> : <Sun size={20} className="animate-spin-slow" />}
             </button>
             <button 
-              className="lg:hidden text-dark-900 dark:text-white"
+              className="lg:hidden text-dark-900 dark:text-white hover:text-secondary-500 transition-colors duration-300"
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
               aria-label="Toggle navigation"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={24} className="animate-rotate-180" /> : <Menu size={24} className="animate-rotate-180" />}
             </button>
           </div>
         </div>
       </div>
       
       {/* Mobile menu */}
-      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
+      <div className={`lg:hidden ${isOpen ? 'block animate-slide-down' : 'hidden'}`}>
         <nav className="bg-white/95 dark:bg-dark-900/95 backdrop-blur-md px-4 pt-2 pb-6 shadow-soft-lg">
-          <a href="#" className="block py-2 text-dark-900 dark:text-white hover:text-secondary-500 border-b border-dark-200 dark:border-dark-600">Home</a>
+          <a href="#" className="block py-2 text-dark-900 dark:text-white hover:text-secondary-500 border-b border-dark-200 dark:border-dark-600 transition-colors duration-300">Home</a>
           <MobileDropdown 
             label="IT" 
             items={[
@@ -188,8 +188,8 @@ export const Header = () => {
               { label: 'All Courses', href: '#' },
             ]} 
           />
-          <a href="#" className="block py-2 text-dark-900 dark:text-white hover:text-secondary-500 border-b border-dark-200 dark:border-dark-600">About Us</a>
-          <a href="#" className="block py-2 text-dark-900 dark:text-white hover:text-secondary-500">Contact Us</a>
+          <a href="#" className="block py-2 text-dark-900 dark:text-white hover:text-secondary-500 border-b border-dark-200 dark:border-dark-600 transition-colors duration-300">About Us</a>
+          <a href="#" className="block py-2 text-dark-900 dark:text-white hover:text-secondary-500 transition-colors duration-300">Contact Us</a>
         </nav>
       </div>
     </header>
@@ -202,19 +202,20 @@ const MobileDropdown = ({ label, items }: { label: string, items: { label: strin
   return (
     <div className="border-b border-dark-200 dark:border-dark-600">
       <button 
-        className="flex items-center justify-between w-full py-2 text-dark-900 dark:text-white hover:text-secondary-500"
+        className="flex items-center justify-between w-full py-2 text-dark-900 dark:text-white hover:text-secondary-500 transition-colors duration-300"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{label}</span>
-        <ChevronDown size={16} className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown size={16} className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       
-      <div className={`pl-4 space-y-1 overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-96 py-2' : 'max-h-0'}`}>
-        {items.map((item) => (
+      <div className={`pl-4 space-y-1 overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 py-2' : 'max-h-0'}`}>
+        {items.map((item, index) => (
           <a 
             key={item.label} 
             href={item.href} 
-            className="block py-1 text-dark-700 dark:text-white/80 hover:text-secondary-500 text-sm"
+            className="block py-1 text-dark-700 dark:text-white/80 hover:text-secondary-500 text-sm transition-colors duration-300 animate-slide-right"
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
             {item.label}
           </a>
